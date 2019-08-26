@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://utility/VisibleCollisionPolygon2D.tscn" type="PackedScene" id=1]
+
+[node name="Ground" type="StaticBody2D"]
+
+[node name="VisibleCollisionPolygon2D" parent="." instance=ExtResource( 1 )]
+polygon = PoolVector2Array( 0, 0, 0, 340, 1280, 340, 1280, 0 )
