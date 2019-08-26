@@ -14,4 +14,5 @@ func _on_RetryButton_button_up():
 
 
 func _on_QuitButton_button_up():
+	PlayerData.save_data()
 	get_tree().quit()
