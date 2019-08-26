@@ -42,6 +42,10 @@ config/name="Persistent Player Data"
 run/main_scene="res://screens/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerData="*res://actors/player/PlayerData.tscn"
+
 [display]
 
 window/size/width=1280

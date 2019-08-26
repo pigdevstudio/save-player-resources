@@ -1,4 +1,4 @@
-extends Resource
+extends Node
 
 signal updated
 signal died
@@ -6,6 +6,10 @@ signal died
 export (int) var max_health = 10 setget set_max_health
 export (int) var health = max_health setget set_health
 export (int) var score = 0 setget set_score
+
+func _ready():
+	set_health(max_health)
+
 
 func reset():
 	health = max_health
