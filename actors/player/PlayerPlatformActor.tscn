@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.247059, 0.247059, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.247059, 0.247059, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="PlayerPlatformActor" groups=[
+[node name="PlayerPlatformActor" index="0" groups=[
 "player",
 ] instance=ExtResource( 1 )]
 
@@ -107,18 +107,18 @@ anims/Hurt = SubResource( 2 )
 [connection signal="entered" from="StateMachine/DashFallState" to="Controls/RightAction" method="is_holding"]
 [connection signal="handling" from="Controls/LeftAction" to="StateMachine" method="set_movement_direction" binds= [ Vector2( -1, 0 ) ]]
 [connection signal="pressed" from="Controls/LeftAction" to="StateMachine" method="execute" binds= [ "Move" ]]
-[connection signal="released" from="Controls/LeftAction" to="Controls/RightAction" method="is_holding"]
 [connection signal="released" from="Controls/LeftAction" to="StateMachine" method="execute" binds= [ "Stop" ]]
+[connection signal="released" from="Controls/LeftAction" to="Controls/RightAction" method="is_holding"]
 [connection signal="handling" from="Controls/RightAction" to="StateMachine" method="set_movement_direction" binds= [ Vector2( 1, 0 ) ]]
 [connection signal="pressed" from="Controls/RightAction" to="StateMachine" method="execute" binds= [ "Move" ]]
-[connection signal="released" from="Controls/RightAction" to="Controls/LeftAction" method="is_holding"]
 [connection signal="released" from="Controls/RightAction" to="StateMachine" method="execute" binds= [ "Stop" ]]
+[connection signal="released" from="Controls/RightAction" to="Controls/LeftAction" method="is_holding"]
 [connection signal="pressed" from="Controls/JumpAction" to="StateMachine" method="execute" binds= [ "Jump" ]]
 [connection signal="released" from="Controls/JumpAction" to="StateMachine" method="cancel" binds= [ "Jump" ]]
 [connection signal="pressed" from="Controls/DashAction" to="StateMachine" method="execute" binds= [ "Dash" ]]
+[connection signal="released" from="Controls/DashAction" to="StateMachine" method="execute" binds= [ "Stop" ]]
 [connection signal="released" from="Controls/DashAction" to="Controls/LeftAction" method="is_holding"]
 [connection signal="released" from="Controls/DashAction" to="Controls/RightAction" method="is_holding"]
-[connection signal="released" from="Controls/DashAction" to="StateMachine" method="execute" binds= [ "Stop" ]]
 [connection signal="area_entered" from="PickUpArea2D" to="PickUpArea2D" method="_on_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="HurtBox" method="_on_collision_entered"]
 [connection signal="body_entered" from="HurtBox" to="HurtBox" method="_on_collision_entered"]
